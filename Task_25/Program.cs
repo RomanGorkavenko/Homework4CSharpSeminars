@@ -1,19 +1,38 @@
 ﻿Console.Write("Введите число А: ");
-int a = int.Parse(Console.ReadLine());
-Console.Write("Введите число B: ");
-int b = int.Parse(Console.ReadLine());
+string a = Console.ReadLine();
 
-int degreeResult;
+Console.Write("Введите натуральное число B (от 1): ");
+string b = Console.ReadLine();
 
-int RaiseToADegree(int number, int degreeOfNumber)
+double degreeResult;
+
+double RaiseToADegree(double number, int degreeOfNumber)
 {
-    int degree = 1;
+    double degree = 1;
+
     for (int i = 0; i < degreeOfNumber; i++)
     {
-        degree *= number; 
+        degree *= number;
     }
     return degree;
 }
 
-degreeResult = RaiseToADegree(a, b);
-Console.WriteLine("{0}, {1} -> {2:F6}", a, b, degreeResult);
+
+void ExceptionHandling(string enterA, string enterB)
+{
+    bool yesDouble = double.TryParse(enterA, out double resultNumber);
+    bool yesInt = int.TryParse(enterB, out int result);
+
+    if (yesInt && yesDouble && result > 0)
+    {
+        degreeResult = RaiseToADegree(resultNumber, result);
+        Console.WriteLine("{0} в степени {1} = {2}", a, b, degreeResult);
+    }
+    else 
+    {
+        Console.WriteLine("{0}, {1} -> Некорректный ввод!", a, b);
+    }
+}
+
+ExceptionHandling(a, b);
+
