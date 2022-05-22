@@ -28,7 +28,7 @@ void ExceptionHandling(string enterA)
 {
     bool yesInt = int.TryParse(enterA, out int result);
 
-    if (yesInt && result >= 0)
+    if (yesInt && result >= 0) // Непонятно, что делать с отрицательными числами и 0
     {
         int sumResult = SumNumbersInNumber(result);
         Console.WriteLine("Сумма цифр числа {0} = {1}",
