@@ -1,8 +1,6 @@
 ﻿Console.Write("Введите размер массива: ");
 string len = Console.ReadLine();
 
-
-
 void ExceptionHandling(string enterA)
 {
     bool yesInt = int.TryParse(enterA, out int result);
