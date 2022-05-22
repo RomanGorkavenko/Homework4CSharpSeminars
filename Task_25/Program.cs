@@ -26,7 +26,8 @@ void ExceptionHandling(string enterA, string enterB)
     if (yesInt && yesDouble && result > 0)
     {
         degreeResult = RaiseToADegree(resultNumber, result);
-        Console.WriteLine("{0} в степени {1} = {2}", a, b, degreeResult);
+        Console.WriteLine("{0} в степени {1} = {2}",
+                          resultNumber, result, degreeResult);
     }
     else 
     {
