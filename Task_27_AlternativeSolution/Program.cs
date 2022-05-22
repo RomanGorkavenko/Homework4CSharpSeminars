@@ -1,5 +1,4 @@
-﻿
-try
+﻿try
 {
     Console.Write("Введите целое число: ");
     int numbers = int.Parse(Console.ReadLine());
