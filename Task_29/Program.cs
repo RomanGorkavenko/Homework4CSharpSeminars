@@ -35,7 +35,7 @@ void PrintArray(int[] arr)
     }
     str = str.Remove(1, 2);
     str += "]";
-    Console.Write(str);
+    Console.Write($"Массив из {arr.Length} элементов: {str}");
 }
 
 ExceptionHandling(len);
