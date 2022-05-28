@@ -19,21 +19,19 @@ int RaiseToADegree(int number, int degreeOfNumber)
 bool LetterInNumbers(string let)
 {
     int n = let.Length;
-    bool yesNo = true;
 
     for (int i = 0; i < n; i++)
     {
         // if (Char.IsLetter(let[i]) == true || Char.IsSymbol(let[i]) == true)
-        if (Char.IsDigit(let[i]) == false || int.Parse(let) == 0)
+        if (!Char.IsDigit(let[i]) || int.Parse(let) == 0)
         {
-            yesNo = false;
-            return yesNo;
+            return false;
         }
     }
-    return yesNo;
+    return true;
 }
 
-if (LetterInNumbers(a) == true && LetterInNumbers(b) == true)
+if (LetterInNumbers(a) && LetterInNumbers(b))
 {
     int aInt = int.Parse(a);
     int bInt = int.Parse(b);
